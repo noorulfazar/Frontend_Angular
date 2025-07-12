@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <button class="btn btn-danger float-end" (click)="logout()">Logout</button>
+  <br><br><br>
+  <h2>Employee List</h2>
+  <button routerLink="/employees/new" class="btn btn-primary mb-3">Add Employee</button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editEmployee(emp.id!)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
