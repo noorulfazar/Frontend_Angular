@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 // import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
   // private loginUrl = 'http://localhost:8080/api/auth/login';
-  private loginUrl = '/api/auth/login';
+  // private loginUrl = '/api/auth/login';
+  // private loginUrl = `${environment.apiUrl}/api/auth/login`;
+
+  private loginUrl = `${environment.apiUrl}/auth/login`;
 
   // Use the environment variable to build the URL
   //private loginUrl = `${environment.apiUrl}/api/auth/login`;

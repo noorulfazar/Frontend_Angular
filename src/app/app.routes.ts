@@ -17,7 +17,8 @@ import { EmployeeFormComponent } from './components/employee-form/employee-form.
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'employees', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'employees', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'employees', component: EmployeeListComponent, canActivate: [AuthGuard] },
   { path: 'employees/new', component: EmployeeFormComponent, canActivate: [AuthGuard] },
